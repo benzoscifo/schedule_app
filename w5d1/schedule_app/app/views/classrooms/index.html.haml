@@ -1,0 +1,25 @@
+%h1Classrooms
+
+%table
+  %tr
+    %th Name
+    %th Location
+    %th
+    %th
+    %th
+
+- @classrooms.each do |classroom|
+  %tr
+    %td= classroom.name
+    %td= classroom.location_id
+    %td= link_to 'Show', classroom 
+    %td= link_to 'Edit', edit_classroom_path(classroom)
+    %td= link_to 'Destroy', classroom, method: :delete, data: { confirm: 'Are you sure?' } 
+
+%br/
+.bottom_link
+=link_to 'New Classroom', new_classroom_path
+%embed{:height => "315", :preload => "", :src => "https://www.youtube.com/v/thihXcZXOsU", :width => "420"}
+
+
+

@@ -1,49 +1,26 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <b>Name:</b>
-  <%= @course.name %>
-</p>
-
-<p>
-<b>File:</b>
-<%= image_tag @course.image.thumb.url %>
-</p>
-
-<p>
-  <b>Start Date:</b>
-    <%= @course.start_date %>
-  </p>
-
-  <p>
-    <b>End Date:</b>
-    <%= @course.end_date %>
-  </p>
-
-  <p>
-    <b>Price:</b>
-    <%= @course.price %>
-  </p>
-
-  <p>
-    <b>Students:</b>
-    <% @course.students.each do |student| %>
-      <%= student.name %>
-      <% end %>
-    </p>
-
-    <p>
-      <b>Instructor:</b>
-      <% @course.instructors.each do |instructor| %>
-        <%= instructor.name %>
-        <% end %>
-      </p>
-
-      
-  
-
-
-
-
-<%= link_to 'Edit', edit_course_path(@course) %> |
-<%= link_to 'Back', courses_path %>
+%p#notice= notice 
+%p
+  %bName:
+  = @course.name
+%p
+ %b File:
+ = image_tag @course.image.thumb.url
+%p
+  %b Start Date:
+  = @course.start_date
+%p
+  %b End Date:
+  = @course.end_date 
+%p
+  %b Price:
+  = @course.price
+%p
+  %b Students:
+  - @course.students.each do |student|
+      =student.name
+%p
+  %b Instructor:
+  - @course.instructors.each do |instructor|
+        <%= instructor.name 
+= link_to 'Edit', edit_course_path(@course |
+\#{link_to 'Back', courses_path}

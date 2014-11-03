@@ -1,0 +1,14 @@
+%p#="notice"= notice
+%p
+  %bName
+  =@classroom.name
+%p
+  %b File:
+  = image_tag
+@classroom.classroom_image.thumb.url
+%p
+  %b Location:
+  = @classroom_location 
+= link_to 'Edit', edit_classroom_path(@classroom)
+|
+\#{link_to 'Back', classrooms_path}
